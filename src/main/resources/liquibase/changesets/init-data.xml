@@ -1,0 +1,139 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="postgresql"/>
+    <changeSet id="4" author="sasha">
+        <insert tableName="lot">
+            <column name="id" value="1"/>
+            <column name="status" value="STOPPED"/>
+            <column name="title" value="Orkrist"/>
+            <column name="description" value="Gandalf`s sword"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="2"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="lembas"/>
+            <column name="description" value="one package of famous elven bread"/>
+            <column name="start_price" value="50"/>
+            <column name="bid_price" value="5"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="3"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="Horn of Gondor"/>
+            <column name="description" value="heirloom of the Stewards of Gondor"/>
+            <column name="start_price" value="450"/>
+            <column name="bid_price" value="50"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="4"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="elven cloak"/>
+            <column name="description" value="a gift from Galadriel to Frodo"/>
+            <column name="start_price" value="200"/>
+            <column name="bid_price" value="20"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="5"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="Arkenstone"/>
+            <column name="description" value="legendary Dwarven diamond"/>
+            <column name="start_price" value="1500"/>
+            <column name="bid_price" value="150"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="6"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="7"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="8"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="9"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="10"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="11"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+        <insert tableName="lot">
+            <column name="id" value="12"/>
+            <column name="status" value="CREATED"/>
+            <column name="title" value="TEST_for_paging"/>
+            <column name="description" value="TEST_for_paging"/>
+            <column name="start_price" value="1000"/>
+            <column name="bid_price" value="100"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="sasha">
+        <insert tableName="bid">
+            <column name="id" value="1"/>
+            <column name="lot_id" value="1"/>
+            <column name="bidder_name" value="Fedor"/>
+            <column name="bid_date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="bid">
+            <column name="id" value="2"/>
+            <column name="lot_id" value="1"/>
+            <column name="bidder_name" value="Sasha"/>
+            <column name="bid_date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="bid">
+            <column name="id" value="3"/>
+            <column name="lot_id" value="1"/>
+            <column name="bidder_name" value="Fedor"/>
+            <column name="bid_date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="bid">
+            <column name="id" value="4"/>
+            <column name="lot_id" value="1"/>
+            <column name="bidder_name" value="Sasha"/>
+            <column name="bid_date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="bid">
+            <column name="id" value="5"/>
+            <column name="lot_id" value="1"/>
+            <column name="bidder_name" value="Sasha"/>
+            <column name="bid_date" valueDate="${now}"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
+    
