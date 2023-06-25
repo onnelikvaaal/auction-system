@@ -9,6 +9,7 @@ import ru.skypro.springboot.project.auctionsystem.exceptions.BidNotFoundExceptio
 import ru.skypro.springboot.project.auctionsystem.exceptions.LotNotActiveException;
 import ru.skypro.springboot.project.auctionsystem.exceptions.LotNotFoundException;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface LotService {
@@ -29,5 +30,5 @@ public interface LotService {
 
     List<LotDTO> getLotsByPage(int pageIndex, Status status);
 
-
+    byte[] createReport() throws IOException, BidNotFoundException;
 }

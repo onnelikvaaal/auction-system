@@ -6,11 +6,21 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class LotExceptionHandler {
+public class AppExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<?> handleIOException(LotNotFoundException exception) {
+    public ResponseEntity<?> handleLotNotFoundException(LotNotFoundException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<?> handleBidNotFoundException(BidNotFoundException exception) {
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<?> handleLotNotActiveException(LotNotActiveException exception) {
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     @ExceptionHandler

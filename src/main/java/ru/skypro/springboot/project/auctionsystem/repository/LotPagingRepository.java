@@ -6,7 +6,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import ru.skypro.springboot.project.auctionsystem.entity.Lot;
 import ru.skypro.springboot.project.auctionsystem.entity.Status;
 
-import java.util.List;
 
 public interface LotPagingRepository extends PagingAndSortingRepository<Lot, Integer> {
 

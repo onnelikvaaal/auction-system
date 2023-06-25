@@ -4,10 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;
-import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -23,5 +22,4 @@ public class Bid {
     private Lot lot;
     private String bidderName;
     private Date bidDate;
-
 }
