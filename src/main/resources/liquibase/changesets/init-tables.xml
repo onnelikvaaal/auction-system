@@ -1,0 +1,60 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="1" author="sasha">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="lot"/>
+            </not>
+        </preConditions>
+        <createTable tableName="lot">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="lot_pk"/>
+            </column>
+            <column name="status" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_price" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bid_price" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="sasha">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="bid"/>
+            </not>
+        </preConditions>
+        <createTable tableName="bid">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="bid_pk"/>
+            </column>
+            <column name="lot_id" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bidder_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bid_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="sasha">
+        <addForeignKeyConstraint baseTableName="bid" baseColumnNames="lot_id" constraintName="bid_lot_fk"
+                                 referencedTableName="lot" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
